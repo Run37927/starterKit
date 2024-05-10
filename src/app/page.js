@@ -6,7 +6,7 @@ export default async function Home() {
   const session = await getAuthSession();
 
   return (
-    <MaxWidthWrapper className="mb-12 mt-8 flex flex-col md:flex-row-reverse md:items-start md:justify-center">
+    <MaxWidthWrapper className="mb-12 mt-8">
       <h1>insert body here</h1>
     </MaxWidthWrapper>
   );
