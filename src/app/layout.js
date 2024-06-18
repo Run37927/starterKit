@@ -1,16 +1,13 @@
 import { Mulish } from 'next/font/google'
 import "./globals.css";
-import { cn } from '@/lib/utils';
+import { cn, constructMetadata } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import { Toaster } from '@/components/ui/toaster';
 import Providers from '@/components/Providers';
 
 const mulish = Mulish({ subsets: ['latin'] });
 
-export const metadata = {
-  title: "insert title here",
-  description: "insert description here",
-};
+export const metadata = constructMetadata();
 
 export default function RootLayout({ children }) {
   return (
