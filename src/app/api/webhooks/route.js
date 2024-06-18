@@ -28,6 +28,7 @@ export async function POST(req) {
             }
 
             // update the order in the database
+            // TODO: make sure your schema has this
             await prisma.order.update({
                 where: {
                     id: orderId
