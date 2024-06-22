@@ -5,3 +5,4 @@
 5. npx prisma generate
 6. npm run dev
 7. try signing in ,should work
+8. change app name in package json
