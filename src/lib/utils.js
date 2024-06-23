@@ -38,6 +38,6 @@ export function constructMetadata({
       images: [image],
       creator: "@hairunhuang",
     },
-    metadataBase: new URL('')
+    metadataBase: new URL('https://example.xyz')
   };
 }
