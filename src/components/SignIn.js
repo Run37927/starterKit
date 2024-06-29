@@ -11,7 +11,7 @@ function SignIn() {
                     <div className='absolute top-6 right-6'>
                         <CloseModalButton />
                     </div>
-                    <div className='flex flex-col items-center justify-center px-10 relative'>
+                    <div className='flex flex-col items-center justify-center px-3 md:px-10 relative'>
                         <h1 className='text-center text-3xl font-bold py-8'>Sign in to myproduct</h1>
 
                         <div className='flex items-center justify-center mb-20'>
