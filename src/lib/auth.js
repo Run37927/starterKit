@@ -2,7 +2,9 @@ import GoogleProvider from "next-auth/providers/google"
 import prisma from "./db"
 import { getServerSession } from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
+import sgMail from '@sendgrid/mail';
 
+sgMail.setApiKey(process.env.SENDGRID_APIKEY);
 export const authOptions = {
     adapter: PrismaAdapter(prisma),
     session: {
@@ -40,6 +42,27 @@ export const authOptions = {
             })
 
             console.log("user", user)
+
+            const isNewUser = user.createdAt.getTime() + 1500 > Date.now();
+            console.log("is new user?", isNewUser);
+
+            //TODO: update subject accordingly
+            if (isNewUser) {
+                const messageToSelf = {
+                    to: 'hairunhuang@gmail.com',
+                    from: 'hello@runbuilds.xyz',
+                    subject: 'A new user has signed in on .',
+                    html: `A user has signed in.<br><strong>Name</strong>: ${user.name}<br><strong>Email</strong>: ${user.email}`,
+                };
+
+                try {
+                    await sgMail.send(messageToSelf);
+                    console.log('New signup notification sent.');
+                } catch (error) {
+                    console.error('Error sending signup notification:', error);
+                }
+            }
+
 
             // Ensure we have a user object before proceeding
             if (user) {
