@@ -21,7 +21,7 @@ async function Navbar() {
 
                     {/* TODO: add mobile navbar */}
 
-                    <div className='hidden items-center space-x-1.5 sm:flex'>
+                    <div className='flex items-center space-x-1.5'>
                         <>
                             <div
                                 className={cn(buttonVariants({
