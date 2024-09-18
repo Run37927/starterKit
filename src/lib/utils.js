@@ -29,6 +29,9 @@ export function constructMetadata({
     openGraph: {
       title,
       description,
+      siteName: "",
+      url: "https://www.example.com",
+      type: "website",
       images: [{ url: image }]
     },
     twitter: {
