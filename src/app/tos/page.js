@@ -1,4 +1,3 @@
-import React from 'react'
 import TermsofService from './TermsofService'
 
 function page() {

@@ -5,7 +5,8 @@ import { headers } from "next/headers"
 export async function POST(req) {
     try {
         const body = await req.text() // get the raw body to make sure its from stripe
-        const signature = headers().get("stripe-signature") // get the stripe signature
+        const headersList = await headers();
+        const signature = headersList.get("stripe-signature") // get the stripe signature
 
         if (!signature) {
             return new Response("Invalid signature", { status: 400 })
@@ -23,8 +24,11 @@ export async function POST(req) {
                 orderId: null
             }
 
+            console.log("userId", userId)
+            console.log("orderId", orderId)
+
             if (!userId || !orderId) {
-                throw new Error('Missing metadata')
+                return new Response("missing metadata", { status: 400 })
             }
 
             // update the order in the database

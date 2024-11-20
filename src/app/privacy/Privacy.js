@@ -1,7 +1,6 @@
 'use client'
 import { ChevronLeft } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import React from 'react'
 
 // TODO: change company name
 function Privacy() {
