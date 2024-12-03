@@ -30,7 +30,7 @@ function UserAccountNav({ session }) {
         return (
             <div
                 ref={dropdownRef}
-                className='min-w-[180px] bg-white border border-brand absolute top-8 right-0 z-50 rounded-xl pt-2'
+                className='min-w-[180px] bg-white shadow-xl border border-brand absolute top-8 right-0 z-50 rounded-xl pt-2'
             >
                 <div className='flex flex-col'>
                     <div className='flex items-center border-b-[1px] px-4 pb-2'>
