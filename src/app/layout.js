@@ -1,18 +1,26 @@
-import { Mulish } from 'next/font/google'
+import { Mulish, Nunito } from 'next/font/google'
 import "./globals.css";
 import { cn, constructMetadata } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import { Toaster } from '@/components/ui/toaster';
 import Providers from '@/components/Providers';
 
-const mulish = Mulish({ subsets: ['latin'] });
+const mulish = Mulish({
+  subsets: ['latin'],
+  variable: "--font-sans",
+})
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  variable: "--font-heading",
+})
 
 export const metadata = constructMetadata();
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='light !scroll-smooth'>
-      <body className={cn('min-h-screen font-sans antialiased', mulish.className)}>
+      <body className={cn('min-h-screen font-sans antialiased', mulish.variable, nunito.variable)}>
         <Providers>
           <Toaster />
           <Navbar />
