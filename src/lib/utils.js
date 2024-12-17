@@ -14,6 +14,10 @@ export const formatPrice = (price) => {
   return formatter.format(price);
 };
 
+export const capitalizeFirstLetter = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 
 // TODO: update this
 export function constructMetadata({
