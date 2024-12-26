@@ -10,7 +10,7 @@ export default async function Home() {
     <MaxWidthWrapper className="mb-12 mt-8">
       <h1>insert body here</h1>
 
-      <FeedbackPop />
+      {/* <FeedbackPop /> */}
     </MaxWidthWrapper>
   );
 }
