@@ -32,7 +32,7 @@ export async function POST(req) {
             }
 
             // update the order in the database
-            // TODO: make sure your schema has this
+            // TODO: make sure your schema has this table and columns
             await prisma.order.update({
                 where: {
                     id: orderId
