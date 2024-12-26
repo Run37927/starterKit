@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import sgMail from '@sendgrid/mail';
 
-sgMail.setApiKey(process.env.SENDGRID_APIKEY);
+sgMail.setApiKey(process.env.SENDGRID_APIKEY); // TODO: if you don't want to use sendgrid, resend is also installed in this repo
 
 async function upsertUserAndAccount(account, profile) {
     const user = await prisma.user.upsert({
@@ -27,12 +27,12 @@ async function upsertUserAndAccount(account, profile) {
     const isNewUser = user.createdAt.getTime() + 1500 > Date.now();
     console.log("is new user?", isNewUser);
 
-    //TODO: update subject accordingly
+    //TODO: update email address and subject accordingly
     if (isNewUser) {
         const messageToSelf = {
-            to: 'hairunhuang@gmail.com',
-            from: 'hello@runbuilds.xyz',
-            subject: 'A new user has signed in on .',
+            to: 'yourself@email.com',
+            from: 'yourself@email.com',
+            subject: 'A new user has signed in on YourCompany.',
             html: `A user has signed in.<br><strong>Name</strong>: ${user.name}<br><strong>Email</strong>: ${user.email}`,
         };
 
@@ -57,10 +57,10 @@ async function upsertUserAndAccount(account, profile) {
                 type: account.type,
                 provider: account.provider,
                 providerAccountId: account.providerAccountId,
-                // Add other fields from the account object as necessary
+                // TODO: Add other fields from the account object as necessary
             },
             update: {
-                // Update any fields that might change
+                // TODO: Update any fields that might change
             },
         });
     }
