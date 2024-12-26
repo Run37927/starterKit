@@ -128,14 +128,16 @@ The starter includes a pre-configured Stripe webhook handler (`/api/webhooks/rou
 
 ## 📦 Project Structure
 
+```
 src/
 ├── app/
-│ ├── api/ # API routes including auth and webhooks
-│ ├── components/ # UI components
-│ └── ...
-├── lib/ # Utility functions and configurations
-├── prisma/ # Database schema
+│   ├── api/          # API routes including auth and webhooks
+│   ├── components/   # UI components
+│   └── ...
+├── lib/             # Utility functions and configurations
+├── prisma/          # Database schema
 └── ...
+```
 
 ## ⚙️ Key Files
 
