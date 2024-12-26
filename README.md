@@ -7,3 +7,4 @@
 7. try signing in ,should work
 8. change app name in package json
 9. update metadata info in utils file to match your app
+10. Search for "TODO" in the codebase and update it accordingly
