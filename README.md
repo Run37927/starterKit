@@ -69,25 +69,33 @@ Create a `.env` file with the following:
 
 ### Authentication
 
+```env
 NEXTAUTH_URL=
 NEXTAUTH_SECRET=
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+```
 
 ### Database
 
+```env
 DATABASE_URL=
+```
 
 ### Stripe
 
+```env
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+```
 
 ### Email (Choose one)
 
+```env
 SENDGRID_API_KEY=
 RESEND_API_KEY=
+```
 
 ## 🔒 Authentication Setup
 
