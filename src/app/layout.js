@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import { Toaster } from '@/components/ui/toaster';
 import Providers from '@/components/Providers';
 
+// To add more fonts, go to https://fonts.google.com/variablefonts
 const mulish = Mulish({
   subsets: ['latin'],
   variable: "--font-sans",
@@ -20,7 +21,7 @@ export const metadata = constructMetadata();
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='light !scroll-smooth'>
-      <body className={cn('min-h-screen font-sans antialiased', mulish.variable, nunito.variable)}>
+      <body className={cn('min-h-screen font-heading antialiased', mulish.variable, nunito.variable)}>
         <Providers>
           <Toaster />
           <Navbar />

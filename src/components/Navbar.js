@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
 import { ArrowRight, Sun, Bell } from 'lucide-react'
@@ -6,7 +5,6 @@ import { buttonVariants } from './ui/button'
 import { cn } from '@/lib/utils'
 import { getAuthSession } from '@/lib/auth'
 import UserAccountNav from './UserAccountNav'
-import Image from 'next/image'
 
 async function Navbar() {
     const session = await getAuthSession();
@@ -19,26 +17,34 @@ async function Navbar() {
                         <span>MyProduct</span>
                     </Link>
 
+                    <div className="hidden md:flex items-center justify-center gap-10">
+                        <Link href='#pricing' className='font-semibold hover:underline hover:underline-offset-2'>
+                            Pricing
+                        </Link>
+                        <Link href='#demo' className='font-semibold hover:underline hover:underline-offset-2'>
+                            Demo
+                        </Link>
+                        <Link href='#faq' className='font-semibold hover:underline hover:underline-offset-2'>
+                            Faq
+                        </Link>
+                    </div>
+
                     <div className='flex items-center space-x-1.5'>
                         <>
-                            <div
-                                className={cn(buttonVariants({
-                                    variant: "ghost",
-                                    size: "sm",
-                                }), "cursor-pointer")}>
-                                <Bell className='h-4 w-4' />
-                            </div>
-
-                            <div
-                                className={cn(buttonVariants({
-                                    variant: "ghost",
-                                    size: "sm",
-                                }), "cursor-pointer")}>
-                                <Sun className='h-4 w-4' />
-                            </div>
-
                             {session?.user ? (
-                                <UserAccountNav session={session} />
+                                <div className="flex items-center space-x-4">
+                                    <Link
+                                        href="/dashboard"
+                                        className={buttonVariants({
+                                            size: "sm",
+                                            className: "flex items-center justify-center text-xs group px-4 py-5"
+                                        })}>
+                                        <span>Dashboard</span>
+                                        <ArrowRight className='ml-1.5 transform size-4 transition-transform duration-300 group-hover:translate-x-1' />
+                                    </Link>
+                                    <div className="h-8 w-px bg-gray-200" />
+                                    <UserAccountNav session={session} />
+                                </div>
                             ) : (
                                 <Link href='/sign-in' className={cn(buttonVariants({ size: "sm" }), "flex items-center justify-center group px-4 py-5")}>
                                     <span>Sign in</span>
