@@ -34,7 +34,7 @@ A production-ready Next.js starter template with essential integrations for ship
    npm install
    ```
 
-2. Create a `.env` file in the root directory and copy contents from `.env.local`. Read carefully instructions in the file.
+2. Create a `.env` file in the root directory and copy contents from `.env.local.example`. Read carefully instructions in the file.
 
 3. Set up required credentials:
 
